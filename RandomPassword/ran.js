@@ -1,6 +1,17 @@
+let inputSlider = document.getElementById('inputSlider');
+let sliderValue = document.getElementById('sliderValue');
+
+sliderValue.textContent = inputSlider.value;
+inputSlider.addEventListener('input',()=>{
+  sliderValue.textContent = inputSlider.value;
+})
+
+
+
+
 function generatePassword(){
 
-  let length = document.getElementById('length').value;
+  let length = document.getElementById('inputSlider').value;
   let includeUpperCase = document.getElementById('upper').checked;
   let includeLowerCase = document.getElementById('lower').checked;
   let includeNumbers = document.getElementById('num').checked;
@@ -19,25 +30,19 @@ function generatePassword(){
   combineChar += includeNumbers ? Numbers: "";
   combineChar += includeCharacter ? Characters: "";
 
-  if (length < 8){
-    document.getElementById('result').innerText = 'Length must be at least 8 characters';
-    return;
-  }
 
   if (combineChar.length === 0){
-    document.getElementById('result').innerText = 'At least one set of character is required';
+    document.getElementById('passResult').value = 'Include something !!';
     return;
   }
 
-  if (length > 30){
-    document.getElementById('result').innerText = 'Length exceeded !!';
-    return;
-  }
+
 
   for (let i=0; i<length; i++){
     let index = Math.floor(Math.random()*combineChar.length);
     password += combineChar[index];
   }
 
-  document.querySelector('#result').innerText = password;
+  let result = document.getElementById('passResult');
+  result.value = password;
 }
