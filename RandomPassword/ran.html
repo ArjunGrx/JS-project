@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="ran.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1>Password Generator</h1>
+    <p>Length:</p>
+    <input type="number" placeholder="0" id="length">
+
+    <div class="include">
+      <p>Include:</p>
+      
+    </div>
+    <div class="include">
+      <input type="checkbox"  id="upper">
+    <label for="upper">Uppercase Letters</label>
+    </div> 
+    
+    <div class="include">
+      <input type="checkbox"  id="lower">
+    <label for="lower">Lowercase Letters</label>
+    </div>
+
+    <div class="include">
+      <input type="checkbox"  id="num">
+      <label for="num">Numbers</label>
+    </div>
+
+    <div class="include">
+      <input type="checkbox"  id="char">
+      <label for="char">Characters</label>
+    </div>
+
+    <button id="generate" onclick=" generatePassword();">Generate Password</button>
+
+    <div id="result">result</div>
+    
+  </div>
+  <script src="ran.js"></script>
+</body>
+</html>
