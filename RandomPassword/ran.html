@@ -10,8 +10,14 @@
   <div class="container">
 
     <h1>Password Generator</h1>
-    <p>Length:</p>
-    <input type="number" placeholder="0" id="length">
+  
+    <input type="text" id="passResult" disabled>
+    <input type="range" id="inputSlider" min="8" max="20">
+
+    <div class="row">
+      <p id="lengths">Passport Length</p>
+    <span id="sliderValue"></span>
+    </div>
 
     <div class="include">
       <p>Include:</p>
@@ -39,7 +45,7 @@
 
     <button id="generate" onclick=" generatePassword();">Generate Password</button>
 
-    <div id="result">result</div>
+
     
   </div>
   <script src="ran.js"></script>
